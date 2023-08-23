@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project CSS BOX MODEL</title>
+    <LINk href="./styles.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&family=Tilt+Prism&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Merriweather:ital@0;1&family=Tilt+Prism&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>CSS Box Model Reference</h1>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th id="empty"></th>
+                <th id="empty"></th>
+                <th scope="col">Definition</th>
+                <th scope="col" colspan="5">CSS declaration</th>
+                <th scope="col">Remarque</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th id="Main" rowspan="6">Component Of the Box</th>
+
+                <th class="main2">Content</th>
+                <td>characterized with a height and width</td>
+                <td colspan="5">height: 80px; /
+                                width: 240px; /
+                                min-width: 300px; /
+                                max-width: 600px;</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th class="main2" rowspan="2">padding</th>
+                <td rowspan="2">The amount of space between the content area and the border.</td>
+                <th class="main2" colspan="2">Standard</th>
+                <td colspan="3">padding-top /
+                                padding-right /
+                                padding-bottom /
+                                padding-left (px)</td>
+                <td rowspan="2"></td>
+            <tr>
+                <th class="main2" colspan="2">Shorthand</th><td colspan="3">padding: 10px; (10px on all 4 sides) <br>padding: 6px 11px 4px 9px; (the four values 6px 11px 4px 9px correspond to the amount of padding on each side, in a clockwise rotation)</br></td>
+            </tr>
+            </tr>
+            <tr>
+                <th class="main2">border</th>
+                <td>The thickness and style of the border surrounding the content area and padding.</td>
+                <td colspan="5">
+                    <ul>
+                        <li>
+                            border: 3px solid coral; 
+                            <ul>
+                                <li>width: A border’s thickness can be set in pixels or with one of the following keywords: thin, medium, or thick.</li>
+                                <li>style solid : Web browsers can render any of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style#values">10 different styles</a>. Some of these styles include: none, dotted, and solid.</li>
+                                <li>color : coral</li>
+                            </ul> 
+                        </li>  
+                        <li>border-radius: 5px; (to modify the corners of an element’s border box)</li>
+                    </ul>
+        
+
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th class="main2" rowspan="2">Margin</th>
+                <td rowspan="2">The amount of space between the border and the outside edge of the element.</td>
+                <th class="main2" colspan="2">Standard</th>
+                <td colspan="3">margin-top /
+                                margin-right /
+                                margin-bottom /
+                                margin-left</td>
+                <td rowspan="2"><ol><li>margin: 0 auto; (This Property lets you center content, however a width must be set for the element "The 0 sets the top and bottom margins to 0 pixels. The auto value instructs the browser to adjust the left and right margins until the element is centered within its containing element")</li><li>Margin Collapse (Horizontal margins (left and right),are always displayed and added together, however top and bottom margins, also called vertical margins, collapse)</li></ol></td>
+            <tr>
+                <th class="main2" colspan="2">Shorthand</th><td colspan="3"><ul><li>margin: 20px; (20px on all 4 sides)</li><li>margin: 6px 10px 5px 12px;</li></ul></td>
+            </tr>
+
+            </tr>
+
+            <tr>
+                <th id="Main" rowspan="4">Additional Properties</th>
+                <th class="main2">Overflow</th>
+                <td>The overflow property controls what happens to content that spills, or overflows, outside its box.</td>
+                <td colspan="5">overflow: value;</td>
+                <td>The most commonly used values are: <ul><li>hidden —when set to this value, any content that overflows will be hidden from view.</li><li>scroll —when set to this value, a scrollbar will be added to the element’s box so that the rest of the content can be viewed by scrolling.</li><li>visible —when set to this value, the overflow content will be displayed outside of the containing element. Note, this is the default value.</li></ul></td>
+            </tr>
+            <tr>
+                <th class="main2">Visibility</th>
+                <td>Elements can be hidden from view with the visibility property.</td>
+                <td colspan="5">visibility: value;</td>
+                <td>The visibility property can be set to one of the following values: <ul><li>hidden — hides an element.</li><li>visible — displays an element.</li><li>collapse — collapses an element.
+                    <ul></li></ul></td>
+            </tr>
+            <tr>
+                <th class="main2">Box-Sizing</th>
+                <td>The property box-sizing controls which aspect of the box is determined by the height and width properties.</td>
+                <td colspan="5">box-sizing: value;</td>
+                <td>values are : <ul><li>content-box</li><li>border-box</li></ul> <br>The value border-box of the box-sizing property for an element corresponds directly to the element’s total rendered size, including padding and border with the height and width properties.
+
+                    The default value of the box-sizing property is content-box. The value border-box is recommended when it is necessary to resize the padding and border but not just the content. For instance, the value border-box calculates an element’s height as follows: height = content height + padding + border.
+                </td>
+            </tr>
+            <tr>
+                <th class="main2">Resetting Defaults</th>
+                <td></td>
+                <td colspan="5">* {
+                    margin: 0;
+                    padding: 0;
+                  }
+                </td>
+                <td>User agent stylesheets often have default CSS rules that set default values for padding and margin. This affects how the browser displays HTML elements, which can make it difficult for a developer to design or style a web page.
+
+                    Many developers choose to reset these default values so that they can truly work with a clean slate.</td>
+            </tr>
+
+        </tbody>
+    </table>
+</body>
+</html>
